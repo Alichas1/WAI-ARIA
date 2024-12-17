@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button id="openModalBtn">Open Modal</button>
+
+    <!-- 1. -->
+
+    <div
+      id="accessibleModal"
+      role="dialog"
+      aria-labelledby="modalTitle"
+      aria-hidden="true"
+      tabindex="0"
+    >
+      <h2 id="modalTitle">Exempel på modalfönster</h2>
+      <p>Här är lite text i modalfönstret.</p>
+      <button id="closeModalBtn">Stäng</button>
+    </div>
+
+    <!-- 2. -->
+    <button id="openDialogbtn">Open dialog</button>
+
+    <dialog id="accessibleDialog" aria-modal="true">
+      <h2>Exempel på tillgängligt modalfönster med &lt;dialog&gt;</h2>
+      <p>Här är innehållet i modalfönstret.</p>
+      <button id="closeDialogBtn">Stäng</button>
+    </dialog>
+
+    <!-- Fördelarna med dialog är att den har en automatisk fokus när man öppnar en modalfönster, tangentbordsnavegering där användaren kan enkelt navigera med tangenten. Semantiskt element som innebär att dialog är tydligt en HTML-element som assisterar skärmläsaren så att det fattar att det är en modalfönster. Det minskar behovet av CSS eller Javascript, så gör det enklare och mer tillgänglig. Det är lättare att skapa tillgängliga och användarvänlig modalfönster utan att behöva skriva extra kod. -->
+
+    <!-- 3. -->
+    <button
+      id="menuButton"
+      aria-haspopup="menu"
+      aria-expanded="false"
+      aria-controls="menuContent"
+    >
+      Meny
+    </button>
+    <nav id="menuContent" role="menu" aria-labelledby="menuButton">
+      <ul>
+        <li><a role="menuitem" href="#">Hem</a></li>
+        <li><a role="menuitem" href="#">Om oss</a></li>
+        <li><a role="menuitem" href="#">Tjänster</a></li>
+        <li><a role="menuitem" href="#">Kontakt</a></li>
+      </ul>
+    </nav>
+
+    <script src="index.js"></script>
+  </body>
+</html>
